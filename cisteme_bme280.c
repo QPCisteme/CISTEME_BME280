@@ -159,8 +159,11 @@ static int bme280_init(const struct device *dev)
     data->ctrl_meas_val=0x24;
     data->ctrl_hum_val=0x01;
 
-    i2c_write_dt(&config->i2c, BME280_CTRL_MEAS, data->ctrl_meas_val);
-    i2c_write_dt(&config->i2c, BME280_CTRL_HUM, data->ctrl_hum_val);
+    uint8_t reg = BME280_CTRL_MEAS;
+    i2c_write_dt(&config->i2c, &reg, data->ctrl_meas_val);
+    
+    reg=BME280_CTRL_HUM;
+    i2c_write_dt(&config->i2c, &reg, data->ctrl_hum_val);
 
     return 0;
 }
