@@ -1,0 +1,6 @@
+if (CONFIG_CISTEME_BME280)
+  zephyr_library()
+  zephyr_syscall_header(${ZEPHYR_CISTEME_BME280_MODULE_DIR}/include/cisteme_bme280.h)
+  zephyr_include_directories(include)
+  zephyr_library_sources(cisteme_bme280.c)
+endif(CONFIG_CISTEME_BME280)

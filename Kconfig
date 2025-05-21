@@ -1,0 +1,7 @@
+menuconfig CISTEME_BME280
+    bool "Enable CISTEME Custom BME280 driver"
+    default y
+    depends on DT_HAS_CISTEME_BME280_ENABLED
+    select I2C
+    help
+      Simple BME280 reading driver

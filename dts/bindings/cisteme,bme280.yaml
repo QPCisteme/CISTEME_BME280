@@ -1,0 +1,5 @@
+description: "CISTEME BME280 Custom Driver"
+
+compatible: "cisteme,bme280"
+
+include: [i2c-device.yaml]
